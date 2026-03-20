@@ -20,7 +20,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/base.css">
@@ -59,32 +59,34 @@
 </nav>
 
 <!-- ═══════════════════════════════════════════════
-     HERO
+     HERO — text left / photo right (matches prototype)
 ═══════════════════════════════════════════════ -->
 <section class="hero" aria-label="Introduction">
-  <div class="hero-photo">
-    <div class="photo-zone" role="img" aria-label="Photo of Anthony">
-      <img src="images/hero.jpg" alt="Anthony — Executive Coach and Mentor" class="photo-slot" onerror="this.style.display='none'">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-      <span>hero.jpg</span>
+  <!-- LEFT: text on charcoal -->
+  <div class="hero-content">
+    <div class="hero-name">Executive Coach &amp; Mentor</div>
+    <h1 class="hero-headline">
+      Unleashing<br>
+      <em>Genius.</em>
+    </h1>
+    <p class="hero-sub">
+      30+ years. Four continents. Over a thousand rooms.<br>
+      One consistent truth: every person has more inside them than they've been told.
+    </p>
+    <div class="hero-cta">
+      <a href="#tracks" class="btn btn--primary">See the Work</a>
+      <a href="contact.html" class="btn btn--outline">Let's Talk</a>
     </div>
   </div>
-  <div class="hero-content">
-    <div class="hero-name">Anthony · Executive Coach · Florida</div>
-    <h1 class="hero-headline">
-      Everybody's got<br>
-      <em>genius</em> in them.<br>
-      Most people just need<br>
-      someone to help them<br>
-      find it.
-    </h1>
-    <div class="hero-divider"></div>
-    <p class="hero-sub">
-      I've coached leaders on construction sites in Saudi Arabia, in corporate boardrooms,
-      in youth shelters at 2 a.m., and now — on the inside. The work is always the same:
-      help people discover what they're actually capable of. Then get out of the way.
-    </p>
-    <div class="hero-tagline">Unleashing Genius · One Person at a Time</div>
+
+  <!-- RIGHT: photo on offwhite -->
+  <div class="hero-photo" role="img" aria-label="Photo of Anthony">
+    <img src="images/hero.jpg" alt="Anthony — Executive Coach and Mentor" class="photo-slot" onerror="this.style.display='none'">
+    <div class="photo-zone">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span>Insert Your Photo Here</span>
+      <span style="font-size:12px; font-weight:400; letter-spacing:0; opacity:.6; text-transform:none; max-width:200px; text-align:center; font-family:var(--font-body);">Replace with your headshot or a great action shot</span>
+    </div>
   </div>
 </section>
 
@@ -94,20 +96,20 @@
 <div class="stats-bar" aria-label="Career highlights">
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-num">30+</div>
-      <div class="stat-label">Years Coaching</div>
+      <span class="stat-num">30+</span>
+      <span class="stat-label">Years Coaching &amp; Facilitating</span>
     </div>
     <div class="stat-item">
-      <div class="stat-num">1,000+</div>
-      <div class="stat-label">Presentations</div>
+      <span class="stat-num">1,000+</span>
+      <span class="stat-label">Presentations Delivered</span>
     </div>
     <div class="stat-item">
-      <div class="stat-num">5</div>
-      <div class="stat-label">Continents</div>
+      <span class="stat-num">4</span>
+      <span class="stat-label">Continents of Experience</span>
     </div>
     <div class="stat-item">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Tracks, 1 Mission</div>
+      <span class="stat-num">3</span>
+      <span class="stat-label">Lives He's Built This For</span>
     </div>
   </div>
 </div>
@@ -119,34 +121,30 @@
   <div class="container">
     <div class="story-grid">
       <div class="story-sidebar">
-        <div class="photo-zone story-photo" role="img" aria-label="Photo of Anthony in the field">
+        <div class="story-photo photo-zone" role="img" aria-label="Photo of Anthony in the field">
           <img src="images/about-1.jpg" alt="Anthony — workshop or field moment" class="photo-slot" loading="lazy" onerror="this.style.display='none'">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
           <span>about-1.jpg</span>
         </div>
         <div class="story-caption">📍 Florida · Available Nationwide</div>
       </div>
       <div class="story-text">
-        <div class="eyebrow">The Story Behind the Work</div>
-        <h2 class="reveal">I wasn't always the guy who helped people grow.</h2>
+        <span class="eyebrow">Who Is Anthony</span>
+        <h2 class="reveal">The person who found his purpose by looking backward.</h2>
         <p class="reveal">
-          Thirty years ago I was good at my job and <strong>terrible with people.</strong> I knew how to get things done. I didn't always know — or care — who I ran over doing it. Then a man named David Foster sat me down and told me I was the "go-to last guy." Effective. Dependable. But leaving a trail of damaged relationships behind me.
+          In his thirties, Anthony looked back at every job he'd ever held and found one thread running through all of it: developing people was what he loved most, and what he did best. He called it "Unleashing Genius." Everything since has been proof.
+        </p>
+        <p class="reveal">
+          Over the next thirty years, he took that conviction into construction sites, boardrooms, youth programs, and project facilities on four continents — and he always left the room better than he found it.
+        </p>
+        <p class="reveal">
+          In June 2026, he retired from Bechtel and moved to Florida to do the work he was always heading toward: three tracks, one philosophy, every person in the room mattering.
         </p>
         <div class="pull-quote reveal">
-          <p>"You're the guy we call last — because by then, the damage is already done."</p>
+          <p>Anthony broke down barriers with a reluctant, newly-mobilized team in two days that would normally take months. His skill in this area is rare in the construction industry.</p>
+          <cite>— John Andreatta, HLW Completions Manager · 40-Year Industry Veteran</cite>
         </div>
-        <p class="reveal">
-          That conversation changed my life. Not because it was gentle — it wasn't. Because it was <strong>true.</strong>
-        </p>
-        <p class="reveal">
-          I spent the next thirty years figuring out how to be the kind of leader who gets results AND leaves people better than I found them. I delivered over a thousand presentations across five continents. I coached executives who couldn't talk to their own teams. I sat with kids at Covenant House who'd been thrown away by the world. I learned something that I now know to be true without exception:
-        </p>
-        <p class="reveal">
-          <strong>Genius isn't rare. It's buried.</strong> By circumstance. By fear. By the story someone told them about who they were.
-        </p>
-        <p class="reveal">
-          My job — my purpose — is to help people unbury it. I've been doing it my whole career. Now I'm doing it full-time, for anyone who's ready. No matter where they're starting from.
-        </p>
+        <a href="about.html" class="btn btn--outline-dark" style="margin-top:8px;">Full Story →</a>
       </div>
     </div>
   </div>
@@ -155,109 +153,61 @@
 <!-- ═══════════════════════════════════════════════
      THREE TRACKS
 ═══════════════════════════════════════════════ -->
-<section class="section section--warm">
+<section id="tracks" class="section section--dark">
   <div class="container">
-    <div class="tracks-intro reveal">
-      <div class="eyebrow">What I Do</div>
-      <h2>Three Tracks.<br>One Purpose.</h2>
-      <p>Whether you're in a corner office, a community center, or a correctional facility — the work of becoming who you're supposed to be doesn't look that different. It takes honesty, commitment, and someone who won't let you off the hook.</p>
+    <div class="tracks-intro">
+      <span class="eyebrow">The Work</span>
+      <h2>Three tracks.<br><em>One conviction.</em></h2>
+      <p>Every person Anthony works with — whether they're running a project site, navigating a rough neighborhood, or counting down days to release — has the same thing waiting for them. His job is to help them get there.</p>
     </div>
 
-    <!-- TRACK 1 -->
-    <div class="track-card track--1 reveal">
-      <div class="track-visual">
-        <div class="track-photo" role="img" aria-label="One-on-one or team coaching session">
-          <img src="images/coaching.jpg" alt="Anthony leading a coaching session" class="photo-slot" loading="lazy" onerror="this.style.display='none'">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>coaching.jpg</span>
-        </div>
-        <div class="track-accent"></div>
+    <div class="tracks-home-grid">
+      <!-- Track 1 -->
+      <div class="track-home-card reveal" data-num="1">
+        <span class="track-home-icon">🌱</span>
+        <span class="track-home-num">Track One</span>
+        <h3 class="track-home-title">Personal Growth &amp; Development Coaching</h3>
+        <p class="track-home-tag">For anyone ready to stop coasting and start becoming.</p>
+        <div class="track-home-divider"></div>
+        <ul class="track-home-list">
+          <li>One-on-one executive coaching &amp; mentoring</li>
+          <li>Team alignment &amp; culture change workshops</li>
+          <li>Signature 2-day intensive format</li>
+          <li>Any industry. Any level. Just readiness.</li>
+        </ul>
+        <a href="coaching.html" class="track-home-link">Learn More →</a>
       </div>
-      <div class="track-content">
-        <div class="track-num">Track One</div>
-        <h3 class="track-title">Personal Growth &amp;<br>Development Coaching</h3>
-        <div class="track-subtitle">For Anyone Ready to Grow</div>
-        <div class="track-divider"></div>
-        <p class="track-body">
-          You don't need a corner office to need a coach. You need honesty, a mirror, and someone willing to stay in the room when the conversation gets uncomfortable.
-          <br><br>
-          I work with <strong>professionals, career changers, people in the middle of what feels like a mess,</strong> and anyone else who knows they're not operating at their full potential. I don't do cheerleading. I do real conversations that move people.
-          <br><br>
-          One-on-one coaching. Group workshops. Team alignment. If it involves getting people closer to the best version of themselves — that's the work.
-        </p>
-        <div class="track-tags">
-          <span class="track-tag">1:1 Coaching</span>
-          <span class="track-tag">Group Workshops</span>
-          <span class="track-tag">Team Alignment</span>
-          <span class="track-tag">Leadership Development</span>
-        </div>
-        <a href="coaching.html" class="track-link" aria-label="Learn more about Track 1 Coaching">Learn More →</a>
-      </div>
-    </div>
 
-    <!-- TRACK 2 -->
-    <div class="track-card track--2 reveal">
-      <div class="track-visual">
-        <div class="track-photo" role="img" aria-label="Youth leadership workshop">
-          <img src="images/youth.jpg" alt="Anthony working with young people in a leadership program" class="photo-slot" loading="lazy" onerror="this.style.display='none'">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>youth.jpg</span>
-        </div>
-        <div class="track-accent"></div>
+      <!-- Track 2 -->
+      <div class="track-home-card reveal" data-num="2">
+        <span class="track-home-icon">⚡</span>
+        <span class="track-home-num">Track Two</span>
+        <h3 class="track-home-title">Youth Leadership &amp; Mentorship</h3>
+        <p class="track-home-tag">Because genius doesn't wait until you're 40 to show up.</p>
+        <div class="track-home-divider"></div>
+        <ul class="track-home-list">
+          <li>Intensive group facilitation for at-risk youth</li>
+          <li>One-on-one mentorship for young men</li>
+          <li>Program design for nonprofits</li>
+          <li>Florida-based. Built from Covenant House roots.</li>
+        </ul>
+        <a href="youth.html" class="track-home-link">Learn More →</a>
       </div>
-      <div class="track-content">
-        <div class="track-num">Track Two</div>
-        <h3 class="track-title">At-Risk Youth<br>Leadership Programs</h3>
-        <div class="track-subtitle">For Young People Who Haven't Been Given a Fair Shot</div>
-        <div class="track-divider"></div>
-        <p class="track-body">
-          I spent years at Covenant House. I know what it looks like when the system has given up on a kid. I also know what happens when one adult refuses to.
-          <br><br>
-          This track is about <strong>young people who've been written off</strong> — by schools, by families, by circumstances they didn't choose. I partner with youth-serving organizations to deliver leadership programs built for real life.
-          <br><br>
-          One adult who believes in a kid can change the trajectory of a life. I've seen it. I'm doing it again.
-        </p>
-        <div class="track-tags">
-          <span class="track-tag">Nonprofit Partnerships</span>
-          <span class="track-tag">Program Design</span>
-          <span class="track-tag">Group Facilitation</span>
-          <span class="track-tag">Florida-Based</span>
-        </div>
-        <a href="youth.html" class="track-link" aria-label="Learn more about Track 2 Youth Programs">Learn More →</a>
-      </div>
-    </div>
 
-    <!-- TRACK 3 -->
-    <div class="track-card track--3 reveal">
-      <div class="track-visual">
-        <div class="track-photo" role="img" aria-label="Reentry coaching program">
-          <img src="images/reentry.jpg" alt="Anthony leading a session inside a correctional facility" class="photo-slot" loading="lazy" onerror="this.style.display='none'">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>reentry.jpg</span>
-        </div>
-        <div class="track-accent"></div>
-      </div>
-      <div class="track-content">
-        <div class="track-num">Track Three</div>
-        <h3 class="track-title">Men Reclaiming<br>Purpose</h3>
-        <div class="track-subtitle">Leadership Coaching for Incarcerated &amp; Reentry Men</div>
-        <div class="track-divider"></div>
-        <p class="track-body">
-          This may be the most important work I do.
-          <br><br>
-          Men inside correctional facilities often haven't had a single honest conversation about who they actually are — separate from what they've done. I'm not there to pretend the past didn't happen. I'm there to have the conversations that almost no one will:
-          <br><br>
-          <strong>What are you capable of? What do you owe yourself? What happens when you get out?</strong>
-          <br><br>
-          Purpose is not a luxury. I'm here for that conversation — on the inside and on the way back.
-        </p>
-        <div class="track-tags">
-          <span class="track-tag">Correctional Facilities</span>
-          <span class="track-tag">Reentry Support</span>
-          <span class="track-tag">Purpose Coaching</span>
-          <span class="track-tag">Men's Leadership</span>
-        </div>
-        <a href="reentry.html" class="track-link" aria-label="Learn more about Track 3 Reentry">Learn More →</a>
+      <!-- Track 3 -->
+      <div class="track-home-card reveal" data-num="3">
+        <span class="track-home-icon">🔑</span>
+        <span class="track-home-num">Track Three</span>
+        <h3 class="track-home-title">Reentry &amp; Redemption Leadership</h3>
+        <p class="track-home-tag">For men in — or coming out of — correctional systems who are ready to lead their own lives.</p>
+        <div class="track-home-divider"></div>
+        <ul class="track-home-list">
+          <li>In-facility leadership sessions</li>
+          <li>Pre-release bridge programming</li>
+          <li>Post-release coaching &amp; accountability</li>
+          <li>A record isn't a disqualifier. It's part of your story.</li>
+        </ul>
+        <a href="reentry.html" class="track-home-link">Learn More →</a>
       </div>
     </div>
   </div>
@@ -271,24 +221,23 @@
     <span class="testimonial-mark" aria-hidden="true">"</span>
     <blockquote>
       <p class="testimonial-text">
-        He broke down barriers with a reluctant, newly mobilized team in two days —
-        work that normally takes months. The team was asking for more before he left.
-        His ability to do that is rare in this industry.
-        I've seen a lot of people try. I've seen very few succeed the way Anthony does.
+        He broke down barriers with a reluctant team in two days that would normally take months.
+        The team requested additional sessions. His skill in this area is rare in the industry.
       </p>
     </blockquote>
     <div class="testimonial-bar"></div>
-    <cite class="testimonial-attr">John Andreatta · HLW Completions Manager · 40 Years in Construction</cite>
+    <p class="testimonial-attr">John Andreatta</p>
+    <p class="testimonial-role">HLW Completions Manager · 40-Year Construction Industry Veteran</p>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════
-     IMPACT
+     IMPACT — Three rooms, same conversation
 ═══════════════════════════════════════════════ -->
 <section class="section section--white">
   <div class="container">
     <div class="impact-intro reveal">
-      <div class="eyebrow">Where the Work Happens</div>
+      <span class="eyebrow">Where the Work Happens</span>
       <h2>Three very different rooms.<br>The same conversation.</h2>
       <p>The genius in a boardroom and the genius in a cell block look different on the outside. On the inside, they're asking the same questions.</p>
     </div>
@@ -296,15 +245,15 @@
     <div class="mission-bar reveal">
       <div class="mission-seg">
         <div class="mission-pct" aria-hidden="true">↑</div>
-        <div class="mission-label">Personal Growth</div>
+        <span class="mission-label">Personal Growth</span>
       </div>
       <div class="mission-seg">
         <div class="mission-pct" aria-hidden="true">★</div>
-        <div class="mission-label">Youth Leadership</div>
+        <span class="mission-label">Youth Leadership</span>
       </div>
       <div class="mission-seg">
         <div class="mission-pct" aria-hidden="true">⟳</div>
-        <div class="mission-label">Men Reclaiming Purpose</div>
+        <span class="mission-label">Men Reclaiming Purpose</span>
       </div>
     </div>
 
@@ -333,7 +282,7 @@
 ═══════════════════════════════════════════════ -->
 <section class="section section--warm">
   <div class="container">
-    <div class="eyebrow reveal" style="text-align:center; margin-bottom:40px;">How I Work</div>
+    <span class="eyebrow reveal" style="text-align:center; margin-bottom:40px; display:block;">How I Work</span>
     <div class="philosophy-grid">
       <ul class="philosophy-list">
         <li class="philosophy-item reveal">
@@ -388,11 +337,11 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════
-     SIGN-OFF / FOOTER
+     FOOTER
 ═══════════════════════════════════════════════ -->
 <footer class="signoff">
-  <p>You Matter To Me.</p>
-  <small>Anthony · Executive Coach &amp; Mentor · Florida</small>
+  <span>© 2026 Anthony · All rights reserved</span>
+  <small>Executive Coach &amp; Mentor · Florida</small>
 </footer>
 
 <script src="js/main.js"></script>

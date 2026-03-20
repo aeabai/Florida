@@ -9,15 +9,15 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(11, 31, 58, 0.96);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(196, 136, 42, 0.2);
+  background: var(--charcoal);
+  display: flex;
+  align-items: center;
+  height: 64px;
   transition: box-shadow 0.3s;
 }
 
 .nav.scrolled {
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.4);
 }
 
 .nav-inner {
@@ -27,22 +27,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  width: 100%;
 }
 
 /* Logo / Brand */
 .nav-brand {
-  font-family: var(--font-display);
-  font-size: 18px;
+  font-family: var(--font-ui);
+  font-size: 20px;
   font-weight: 700;
-  color: var(--white);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--offwhite);
   text-decoration: none;
-  letter-spacing: 0.5px;
   flex-shrink: 0;
 }
 .nav-brand em {
-  font-style: italic;
-  color: var(--gold2);
+  font-style: normal;
+  color: var(--copper);
 }
 
 /* Desktop links */
@@ -54,38 +55,37 @@
 }
 
 .nav-links a {
-  font-family: var(--font-ui);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(245, 240, 232, 0.75);
+  color: var(--light);
   text-decoration: none;
   padding: 8px 12px;
-  border-radius: 2px;
   transition: color 0.2s;
   white-space: nowrap;
 }
 
-.nav-links a:hover {
-  color: var(--white);
-}
-
+.nav-links a:hover,
 .nav-links a.active {
-  color: var(--gold2);
+  color: var(--copper);
 }
 
 .nav-links .nav-cta a {
-  background: var(--gold);
-  color: var(--navy);
-  padding: 8px 16px;
-  border-radius: 2px;
+  background: var(--copper);
+  color: white;
+  padding: 8px 18px;
   margin-left: 8px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .nav-links .nav-cta a:hover {
-  background: var(--gold2);
-  color: var(--navy);
+  background: var(--copper-lt);
+  color: white;
 }
 
 /* Mobile hamburger */
@@ -97,14 +97,13 @@
   border: none;
   cursor: pointer;
   padding: 4px;
-  aria-label: "Open menu";
 }
 
 .nav-toggle span {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--cream);
+  background: var(--offwhite);
   transition: all 0.3s;
 }
 
@@ -126,8 +125,8 @@
   top: 64px;
   left: 0;
   right: 0;
-  background: var(--navy);
-  border-bottom: 1px solid rgba(196, 136, 42, 0.2);
+  background: var(--charcoal);
+  border-top: 1px solid rgba(255,255,255,0.06);
   padding: 16px 0 24px;
   z-index: 99;
 }
@@ -138,25 +137,22 @@
 
 .nav-drawer a {
   display: block;
-  font-family: var(--font-ui);
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(245, 240, 232, 0.8);
+  color: var(--light);
   text-decoration: none;
   padding: 14px 24px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
   transition: color 0.2s, background 0.2s;
 }
 
-.nav-drawer a:hover {
-  color: var(--gold2);
-  background: rgba(255,255,255,0.03);
-}
-
+.nav-drawer a:hover,
 .nav-drawer a.active {
-  color: var(--gold2);
+  color: var(--copper);
+  background: rgba(255,255,255,0.03);
 }
 
 .nav-drawer .nav-drawer-cta {
@@ -165,21 +161,30 @@
 
 .nav-drawer .nav-drawer-cta a {
   display: inline-block;
-  background: var(--gold);
-  color: var(--navy);
+  background: var(--copper);
+  color: white;
   padding: 12px 24px;
   border: none;
+  font-family: var(--font-ui);
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-drawer .nav-drawer-cta a:hover {
+  background: var(--copper-lt);
+  color: white;
 }
 
 /* ── NAV SPACER ── */
-/* Prevents content being hidden under fixed nav */
 .nav-spacer {
   height: 64px;
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
+  .nav-inner { padding: 0 24px; }
 }
