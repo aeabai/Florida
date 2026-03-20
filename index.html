@@ -656,6 +656,96 @@
     opacity: 0.8;
   }
 
+  /* ── STICKY NAV ── */
+  .site-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(11,31,58,0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(196,136,42,0.25);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  .site-nav.visible { transform: translateY(0); }
+  .nav-brand {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold2); }
+  .nav-links .nav-cta {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 8px 20px;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-links .nav-cta:hover { background: var(--gold2); color: var(--navy); }
+
+  /* ── BACK TO CHAT BUTTON ── */
+  .back-to-chat {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 100;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    border-radius: 2px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(11,31,58,0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+    pointer-events: none;
+  }
+  .back-to-chat.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .back-to-chat:hover { background: var(--gold2); }
+  .back-to-chat svg { flex-shrink: 0; }
+
+  @media (max-width: 768px) {
+    .nav-links li:not(:last-child) { display: none; }
+    .back-to-chat { bottom: 20px; right: 20px; padding: 12px 18px; font-size: 11px; }
+  }
+
   /* ── PRINT / EXPORT ── */
   @media print {
     .photo-zone input[type="file"], .track-photo input[type="file"] { display: none; }
@@ -677,6 +767,24 @@
 </style>
 </head>
 <body>
+
+<!-- ═══════════════════════════════════════════════
+     STICKY NAV
+═══════════════════════════════════════════════ -->
+<nav class="site-nav" id="site-nav" aria-label="Site navigation">
+  <a href="#" class="nav-brand">Anthony · Unleashing Genius</a>
+  <ul class="nav-links">
+    <li><a href="#story">My Story</a></li>
+    <li><a href="#tracks">The Work</a></li>
+    <li><a href="#chat" class="nav-cta">Chat with Me</a></li>
+  </ul>
+</nav>
+
+<!-- Floating back-to-chat button -->
+<a href="#chat" class="back-to-chat" id="back-to-chat" aria-label="Get back to chat">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  Get Back to Chat
+</a>
 
 <!-- ═══════════════════════════════════════════════
      HERO
@@ -735,7 +843,7 @@
 <!-- ═══════════════════════════════════════════════
      MY STORY
 ═══════════════════════════════════════════════ -->
-<section class="section section--white">
+<section class="section section--white" id="story">
   <div class="container">
     <div class="story-grid">
       <div class="story-sidebar">
@@ -775,7 +883,7 @@
 <!-- ═══════════════════════════════════════════════
      THREE TRACKS
 ═══════════════════════════════════════════════ -->
-<section class="section section--warm">
+<section class="section section--warm" id="tracks">
   <div class="container">
     <div class="tracks-intro">
       <div class="eyebrow">What I Do</div>
@@ -991,7 +1099,7 @@
 <!-- ═══════════════════════════════════════════════
      CTA
 ═══════════════════════════════════════════════ -->
-<section class="cta-section">
+<section class="cta-section" id="chat">
   <div class="container">
     <h2>You ready?<br><em>So am I.</em></h2>
     <p>Whether you're looking for a coach, a workshop facilitator, or a partner for your organization's leadership work — let's talk.</p>
@@ -1027,6 +1135,38 @@ function loadPhoto(input, container) {
     reader.readAsDataURL(input.files[0]);
   }
 }
+
+// Sticky nav + back-to-chat visibility on scroll
+(function() {
+  var nav = document.getElementById('site-nav');
+  var btn = document.getElementById('back-to-chat');
+  var chatSection = document.getElementById('chat');
+  var heroHeight = window.innerHeight * 0.6;
+
+  function onScroll() {
+    var scrollY = window.scrollY || window.pageYOffset;
+
+    // Show sticky nav after scrolling past ~60% of hero
+    if (scrollY > heroHeight) {
+      nav.classList.add('visible');
+    } else {
+      nav.classList.remove('visible');
+    }
+
+    // Show back-to-chat button when user has scrolled past the chat section
+    if (chatSection) {
+      var chatTop = chatSection.getBoundingClientRect().top + scrollY;
+      if (scrollY > heroHeight && scrollY + window.innerHeight < chatTop + 80) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
 </script>
 
 </body>
